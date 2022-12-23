@@ -1,0 +1,27 @@
+{
+  "name": "odin-project-template",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack --config webpack.config.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ctang415/odin-project-template.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ctang415/odin-project-template/issues"
+  },
+  "homepage": "https://github.com/ctang415/odin-project-template#readme",
+  "devDependencies": {
+    "css-loader": "^6.7.2",
+    "eslint": "^8.28.0",
+    "style-loader": "^3.3.1",
+    "webpack": "^5.75.0",
+    "webpack-cli": "^5.0.0"
+  }
+}
