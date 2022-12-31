@@ -1,7 +1,8 @@
 import './style.css';
 
  const knightArray = [[1, 2], [1, -2], [-1, 2], [-1, -2], [2, 1], [2, -1], [-2, -1], [-2, 1]]
- 
+ const container = document.querySelector('.container')
+
  const knightMoves = (currentPosition, finalPosition) => {
     const queue = [currentPosition]
     const visited = []
@@ -42,5 +43,16 @@ import './style.css';
         fastestPathReverse.forEach(element => console.log(element))
     }
 
+    function createGrid(col, row) {
+        for (let i = 0; i < col ; i++){
+            for (let j = 0; j < row; j++) {
+            let div = document.createElement('div');
+            if ((i + j) % 2 === 0) {
+                div.style.backgroundColor = '#EDE0B2'
+            }
+            container.appendChild(div).className = "div";
+            }
+        }
+    };
 
-knightMoves([0,0], [7,4])
+    createGrid(8, 8)

@@ -1,14 +1,12 @@
 .container {
     display: grid;
-    grid-template-columns: repeat(var(--grid-columns), 1fr);
-    grid-template-rows: repeat(var(--grid-rows), 1fr);
-    padding: 40px;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(8, 1fr);
+    padding: 4em;
 }
 
 .div {
     display: grid;
-    border: 1px solid;
-    background: white;
+    background: rgb(185, 130, 88);
     padding-bottom: 100%;
-    
 }
