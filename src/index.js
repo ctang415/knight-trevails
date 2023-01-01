@@ -8,8 +8,12 @@ import KnightImage from './knight.svg'
  const endText = document.createElement('span')
  const resultText = document.createElement('span')
  const knight = new Image()
+ const knightTwo = new Image()
  knight.src = KnightImage
+ knightTwo.src = KnightImage
  knight.classList.add('image')
+ knightTwo.classList.add('image')
+ textBoxes.classList.add('textbox')
 
  textBoxes.appendChild(startText)
  textBoxes.appendChild(endText)
@@ -67,9 +71,9 @@ const knightPiece = new Knight;
         console.log(fastestPath)
         const fastestPathMoves = fastestPath.length - 1
         console.log("=> You made it in " + `${fastestPathMoves}` + " moves. Here is your path: ")
-        resultText.textContent = "=> You made it in " + `${fastestPathMoves}` + " moves. Here is your path: "
+        resultText.textContent = "=> You made it in " + `${fastestPathMoves}` + " move(s). Here is your path: "
         fastestPathReverse.forEach(element => console.log(element))
-        fastestPathReverse.forEach(element => resultText.textContent += `[${element}]`)
+        fastestPathReverse.forEach(element => resultText.textContent += `[${element}] `)
     }
 
     function createGrid(col, row) {
@@ -78,7 +82,7 @@ const knightPiece = new Knight;
             let div = document.createElement('div');
             div.setAttribute('data-id', [`${i}, ${j}`])
             if ((i + j) % 2 === 0) {
-                div.style.backgroundColor = '#EDE0B2'
+                div.style.backgroundColor = '#ffe4c4'
             }
             div.addEventListener('click', () => {
                 if (knightPiece.currentPosition.length === 0) {
@@ -94,6 +98,7 @@ const knightPiece = new Knight;
                     const positionY = parseInt(div.getAttribute('data-id')[3])
                     knightPiece.finalPosition.push(positionX, positionY)
                     knightMoves(knightPiece.currentPosition, knightPiece.finalPosition)
+                    div.appendChild(knightTwo)
                     endText.textContent = `Final Position: [${positionX}, ${positionY}]`
                 }
             })

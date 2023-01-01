@@ -1,17 +1,31 @@
+body {
+    background-color:#faefe2;
+}
 .container {
     display: grid;
-    grid-template-columns: repeat(8, 1fr);
-    grid-template-rows: repeat(8, 1fr);
-    padding: 2em;
+    justify-content: center;
+    grid-template-columns: repeat(8, 3em);
+    grid-template-rows: repeat(8, 3em);
+    padding: 2.5em;
 }
 
 .div {
+    display: flex;
+    justify-content: center;
     cursor: pointer;
     background: rgb(185, 130, 88);
-    width: 4em;
-    height: 4em;
+    height: 3em;
+    width: 3em;
 }
 
 .image {
-    display:block;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.textbox {
+    display: flex;
+    flex-direction: column;
+    justify-items: left;
+    align-items: center;
 }
