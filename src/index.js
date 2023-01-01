@@ -1,7 +1,19 @@
 import './style.css';
+import KnightPiece from './knight.svg'
 
  const knightArray = [[1, 2], [1, -2], [-1, 2], [-1, -2], [2, 1], [2, -1], [-2, -1], [-2, 1]]
  const container = document.querySelector('.container')
+ const textBoxes = document.querySelector('.text')
+ const startText = document.createElement('span')
+ const endText = document.createElement('span')
+ const resultText = document.createElement('span')
+ const knight = new Image()
+ knight.src = KnightPiece
+ knight.classList.add('image')
+
+ textBoxes.appendChild(startText)
+ textBoxes.appendChild(endText)
+ textBoxes.appendChild(resultText)
 
  class Knight {
     constructor(currentPosition, finalPosition) {
@@ -55,7 +67,9 @@ const knightPiece = new Knight;
         console.log(fastestPath)
         const fastestPathMoves = fastestPath.length - 1
         console.log("=> You made it in " + `${fastestPathMoves}` + " moves. Here is your path: ")
+        resultText.textContent = "=> You made it in " + `${fastestPathMoves}` + " moves. Here is your path: "
         fastestPathReverse.forEach(element => console.log(element))
+        fastestPathReverse.forEach(element => resultText.textContent += `[${element}]`)
     }
 
     function createGrid(col, row) {
@@ -70,12 +84,17 @@ const knightPiece = new Knight;
                 if (knightPiece.currentPosition.length === 0) {
                     const positionX = parseInt(div.getAttribute('data-id')[0])
                     const positionY = parseInt(div.getAttribute('data-id')[3])
+                    endText.textContent = ''
+                    resultText.textContent = ''
+                    startText.textContent = `Starting Position: [${positionX}, ${positionY}]`
+                    div.appendChild(knight)
                     knightPiece.currentPosition.push(positionX, positionY)
                 } else {
                     const positionX = parseInt(div.getAttribute('data-id')[0])
                     const positionY = parseInt(div.getAttribute('data-id')[3])
                     knightPiece.finalPosition.push(positionX, positionY)
                     knightMoves(knightPiece.currentPosition, knightPiece.finalPosition)
+                    endText.textContent = `Final Position: [${positionX}, ${positionY}]`
                 }
             })
             container.appendChild(div).className = "div";

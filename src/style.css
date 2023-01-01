@@ -2,11 +2,16 @@
     display: grid;
     grid-template-columns: repeat(8, 1fr);
     grid-template-rows: repeat(8, 1fr);
-    padding: 4em;
+    padding: 2em;
 }
 
 .div {
-    display: grid;
+    cursor: pointer;
     background: rgb(185, 130, 88);
-    padding-bottom: 100%;
+    width: 4em;
+    height: 4em;
+}
+
+.image {
+    display:block;
 }
