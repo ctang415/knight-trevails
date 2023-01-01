@@ -1,5 +1,5 @@
 import './style.css';
-import KnightPiece from './knight.svg'
+import KnightImage from './knight.svg'
 
  const knightArray = [[1, 2], [1, -2], [-1, 2], [-1, -2], [2, 1], [2, -1], [-2, -1], [-2, 1]]
  const container = document.querySelector('.container')
@@ -8,7 +8,7 @@ import KnightPiece from './knight.svg'
  const endText = document.createElement('span')
  const resultText = document.createElement('span')
  const knight = new Image()
- knight.src = KnightPiece
+ knight.src = KnightImage
  knight.classList.add('image')
 
  textBoxes.appendChild(startText)
